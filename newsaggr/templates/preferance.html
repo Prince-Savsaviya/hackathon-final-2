@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Preferance</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href={% static "css/util.css"%}>
+	<link rel="stylesheet" type="text/css" href={% static "css/main2.css"%}>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-color: black;">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" method="POST">
+					{% csrf_token %}
+					<span class="login100-form-title p-b-49">
+						PREFERANCES:
+					</span>
+
+						<input type="checkbox" name="business" id="business">
+                            <label for="BUSINESS">business</label>
+                            <br>
+
+                            <input type="checkbox" name="ENTERTAINMENT" id="ENTERTAINMENT">
+                            <label for="ENTERTAINMENT">ENTERTAINMENT</label>
+                            <br>
+
+                            <input type="checkbox" name="SPORTS" id="SPORTS">
+                            <label for="SPORTS">SPORTS</label>
+                            <br>
+
+                            <input type="checkbox" name="TECHNOLOGY" id="TECHNOLOGY">
+                            <label for="TECHNOLOGY">TECHNOLOGY</label>
+                            <br>
+
+                            <input type="checkbox" name="HEALTH" id="HEALTH">
+                            <label for="HEALTH">HEALTH</label>
+                            <br>
+
+                            <input type="checkbox" name="SCIENCE" id="SCIENCE">
+                            <label for="SCIENCE">SCIENCE</label>
+                            <br>
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type='submit'>
+								SUBMIT
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<script src={% static "js/main.js"%}></script>
+
+</body>
+</html>

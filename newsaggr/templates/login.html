@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href={% static "css/util.css"%}>
+	<link rel="stylesheet" type="text/css" href={% static "css/main2.css"%}>
+
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-color: black;">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form action={% url "users:login" %} class="login100-form validate-form" method="POST">
+					{% csrf_token %}
+					<span class="login100-form-title p-b-49">
+						Log in
+					</span>
+					{% for field in form %}
+					<div class="wrap-input100 validate-input m-b-23">
+						<p class="label-input100">{{ field.label}}<br>{{ field }}
+						</p>
+					</div>
+					{% endfor %}
+					<div class="text-right p-t-8 p-b-31">
+						<a href={% url 'users:forgot'%}>
+							Forgot password?
+						</a>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" method="POST">
+								Log in
+							</button>
+						</div>
+					</div>
+
+					
+					<div class="flex-col-c p-t-50">
+						<span class="txt1 p-b-17">
+							
+						</span>
+
+						<a href={%url 'users:signup'%} class="txt2">
+							Sign Up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+	<script src={% static "js/main.js"%}></script>
+
+</body>
+</html>

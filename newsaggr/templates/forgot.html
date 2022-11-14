@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<title>Forgot Password</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href={% static "css/util.css"%}>
+	<link rel="stylesheet" type="text/css" href={% static "css/main2.css"%}>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-color: black;">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" method="POST">
+					{% csrf_token %}
+					<span class="login100-form-title p-b-49">
+						Can't Remember Your Password?
+					</span>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "email is reauired">
+						<span class="label-input100">Your Email</span>
+						<input class="input100" type="email" name="email" placeholder="Type your email">
+					</div>
+					{% if otp %}
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Password is reauired">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" placeholder="Type your Password">
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Password is reauired">
+						<span class="label-input100">Confirm Password</span>
+						<input class="input100" type="password" name="password2" placeholder="Confirm your Password">
+					</div>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Otp is reauired">
+						<span class="label-input100">Otp</span>
+						<input class="input100" type="text" name="otp1" placeholder="Type your otp">
+					</div>
+					{% endif %}
+					
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type='submit'>
+								Submit
+							</button>
+						</div>
+					</div>
+                    
+					
+
+
+					<div class="flex-col-c p-t-50">
+						<span class="txt1 p-b-17">
+							
+						</span>
+
+						<a href={%url 'users:login'%} class="txt2">
+							Back to Log in
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+	<script src={% static "js/main.js"%}></script>
+
+</body>
+</html>
